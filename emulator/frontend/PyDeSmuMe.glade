@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="wMainW">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="events">GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK</property>
+    <property name="title" translatable="yes">PyDeSmuME</property>
+    <property name="resizable">False</property>
+    <property name="window-position">center</property>
+    <signal name="delete-event" handler="gtk_main_quit" swapped="no"/>
+    <signal name="destroy" handler="on_destroy" swapped="no"/>
+    <signal name="key-press-event" handler="on_wMainW_key_press_event" swapped="no"/>
+    <signal name="key-release-event" handler="on_wMainW_key_release_event" swapped="no"/>
+    <child>
+      <object class="GtkVBox" id="wgVBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkMenuBar" id="wgMenuBar">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="menu_config">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">Config</property>
+                <property name="use-underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu_config_menu">
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkRadioMenuItem" id="menu_rotatescreen3">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Rotate Screen 270</property>
+                        <property name="use-underline">True</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkTable" id="table_layout">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="n-rows">3</property>
+            <property name="n-columns">5</property>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkHSeparator" id="misc_sep4">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="right-attach">2</property>
+                <property name="top-attach">1</property>
+                <property name="bottom-attach">2</property>
+                <property name="x-options">GTK_FILL</property>
+                <property name="y-options"/>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkDrawingArea" id="wDraw_Sub">
+                <property name="width-request">256</property>
+                <property name="height-request">192</property>
+                <property name="can-focus">False</property>
+                <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
+                <signal name="button-press-event" handler="on_wDrawScreen_sub_button_press_event" swapped="yes"/>
+                <signal name="button-release-event" handler="on_wDrawScreen_sub_button_release_event" swapped="yes"/>
+                <signal name="configure-event" handler="on_wDrawScreen_sub_configure_event" swapped="yes"/>
+                <signal name="draw" handler="on_wDrawScreen_sub_draw_event" swapped="no"/>
+                <signal name="motion-notify-event" handler="on_wDrawScreen_sub_motion_notify_event" swapped="yes"/>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="right-attach">2</property>
+                <property name="top-attach">2</property>
+                <property name="bottom-attach">3</property>
+                <property name="x-options"/>
+                <property name="y-options"/>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkDrawingArea" id="wDraw_Main">
+                <property name="width-request">256</property>
+                <property name="height-request">192</property>
+                <property name="can-focus">False</property>
+                <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
+                <signal name="button-press-event" handler="on_wDrawScreen_main_button_press_event" swapped="yes"/>
+                <signal name="button-release-event" handler="on_wDrawScreen_main_button_release_event" swapped="yes"/>
+                <signal name="configure-event" handler="on_wDrawScreen_main_configure_event" swapped="yes"/>
+                <signal name="draw" handler="on_wDrawScreen_main_draw_event" swapped="no"/>
+                <signal name="motion-notify-event" handler="on_wDrawScreen_main_motion_notify_event" swapped="yes"/>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="right-attach">2</property>
+                <property name="x-options"/>
+                <property name="y-options"/>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

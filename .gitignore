@@ -1,0 +1,6 @@
+.vscode/
+.mypy_cache/
+*.frame
+*.ds[0-9]
+HMDS.dsm
+**__pycache__*
