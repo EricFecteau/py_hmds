@@ -2,5 +2,6 @@
 .mypy_cache/
 *.frame
 *.ds[0-9]
+*.nds
 HMDS.dsm
 **__pycache__*
