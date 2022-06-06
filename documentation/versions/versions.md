@@ -1,5 +1,5 @@
 
-# HMDS and HMDS-Cute Versions
+# HMDS & HMDS-Cute Versions
 
 HMDS and HMDS-Cute were released in multiple regions. Many of the regions also receved multiple revisions to the game.
 
@@ -13,7 +13,7 @@ HMDS was released in 4 regions:
 
 <br />
 
-## Available ROM versions for HMDS
+### Available ROM versions for HMDS
 | Region         	| Rom name                                                       	| Serial code 	| Revision 	| SHA-256                                                                      	|
 |----------------	|----------------------------------------------------------------	|----------------	|----------	|------------------------------------------------------------------------------	|
 | North American 	| 0561 - Harvest Moon DS (U)(Legacy)                             	|                	| 0        	| B3F031CA3F979BD8<br>86BE1151AD5183C2<br>44A5542AA36BA1F6<br>1000FB32033139CC 	|
@@ -23,6 +23,8 @@ HMDS was released in 4 regions:
 |          	| 6455 - Harvest Moon DS (EU)                                    	|                	| 1        	| 846CA75CA86781ED<br>D46B0D7891D5D73B<br>B87830712BA1C992<br>C5916EA2AC77D9F5 	|
 | Japan          	| 0100 - Bokujou Monogatari - Korobokkuru Station (v02) (J)(WRG) 	|                	| 2        	| 933E18C4FCC7854F<br>68113EE7A4FB0A47<br>8FAFB3A829610897<br>6D585C9ABB0BD666 	|
 |           	| 0483 - Bokujou Monogatari - Korobokkuru Station (J)(NdsBbs)    	|                	| 0        	| 801E29F03DE83AE4<br>028BC3AD112EFC65<br>B857F341EBC04178<br>B2148F21F4E579C9 	|
+
+<b>Note:</b> The version number can be found in the 0x0000001E byte on the rom.
 
 <br />
 
@@ -52,8 +54,10 @@ HMDS-Cute was realased in 2 regions:
 
 <br />
 
-## Available ROM versions for HMDS-Cute
+### Available ROM versions for HMDS-Cute
 | Region         	| Rom name                                                        	| Serial code 	| Revision 	| SHA-256                                                                      	|
 |----------------	|-----------------------------------------------------------------	|----------------	|----------	|------------------------------------------------------------------------------	|
 | North American 	| 2201 - Harvest Moon DS Cute (USA)                               	|                	| 0        	| B6647C0A367AD52F<br>B9B6F3AFA24E6C3A<br>FE21C8BA588F5B8C<br>D70E53A1F5B0B636 	|
 | Japan          	| 0230 - Bokujou Monogatari - Colobockle Station for Girl (Japan) 	|                	| 0        	| A37198B2475EC68A<br>30D58260FEEA620A<br>A19903ED00A9897F<br>F2366433DF477A96 	|
+
+<b>Note:</b> The version number can be found in the 0x0000001E byte on the rom.
