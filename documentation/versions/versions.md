@@ -27,23 +27,17 @@ HMDS was released in 4 regions:
 
 <b>Note:</b> The version number can be found in the 0x0000001E byte on the rom.
 
+The important elements of the serial codes are the fourth and sixth characters. The fourth character indicates the region (E for North American, P for PAL (Europe), J for Japan) and the sixth character indicates the major revision. The eighth and ninth characters may indicate something, but multiple codes are associated with the same rom.
+
 <br />
 
 Physical cartridges with no known associated ROM also exist. Different versions of these carts can be differentiated by a serial code on the back of the cartridge.
 
 | Region        	| Serial code 	| Revision 	|
 |---------------	|-------------	|----------	|
-| North America 	| ABCEN0J12   	| 0.12     	|
-|               	| ABCEN0J20   	| 0.20     	|
-|               	| ABCEN0J22   	| 0.22     	|
-|               	| ABCEN0J34   	| 0.34     	|
-|               	| ABCEN1J09   	| 1.09     	|
-|               	| ABCEN1J22   	| 1.22     	|
+| North America 	| ABCEN1J09   	| 1.09     	|
 | Europe        	| ABCPN0J13   	| 0.13     	|
-|               	| ABCPN1J11   	| 1.11     	|
 | Japan         	| ABCJN2J08   	| 2.08     	|
-
-The important elements of the serial codes are the fourth, sixth, eighth and ninth characters. The fourth character indicates the region (E for North American, P for PAL (Europe), J for Japan); the sixth character indicates the major revision; and the eighth and ninth characters indicate the minor revision.
 
 <br />
 
