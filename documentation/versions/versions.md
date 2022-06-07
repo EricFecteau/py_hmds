@@ -21,7 +21,7 @@ HMDS was released in 4 regions:
 |                	| 1395 - Harvest Moon DS (v01) (U)(Lucifell)                     	| ABCEN1J22,<br>ABCEN1J34               	| 1        	| 5F300C5D66A578F9<br>8A747182FA584FF4<br>0EEFE2C9B1B2AA9F<br>3B10BEF69D829FAD 	|
 |                	| Harvest Moon DS (USA) (Rev 1)                                  	|                                       	| 1        	| EE9C01FD41ED68A8<br>180421DCC58D4BB0<br>BB0C27D7DAC0A1BD<br>1937E408475BFD4C 	|
 | Europe         	| 0998 - Harvest Moon DS (E)(Supremacy)                          	| ABCPN0J13,<br>ABCPN0J34               	| 0        	| 4D28F21A63CC464E<br>378FB5EFB9A10BDC<br>B3D6B36A8451C33D<br>0BA230325CFB94E9 	|
-|                	| 6455 - Harvest Moon DS (EU)                                    	|                                       	| 1        	| 846CA75CA86781ED<br>D46B0D7891D5D73B<br>B87830712BA1C992<br>C5916EA2AC77D9F5 	|
+|                	| 6455 - Harvest Moon DS (EU)                                    	| ABCPN1J11                             	| 1        	| 846CA75CA86781ED<br>D46B0D7891D5D73B<br>B87830712BA1C992<br>C5916EA2AC77D9F5 	|
 | Japan          	| 0100 - Bokujou Monogatari - Korobokkuru Station (v02) (J)(WRG) 	|                                       	| 2        	| 933E18C4FCC7854F<br>68113EE7A4FB0A47<br>8FAFB3A829610897<br>6D585C9ABB0BD666 	|
 |                	| 0483 - Bokujou Monogatari - Korobokkuru Station (J)(NdsBbs)    	|                                       	| 0        	| 801E29F03DE83AE4<br>028BC3AD112EFC65<br>B857F341EBC04178<br>B2148F21F4E579C9 	|
 
