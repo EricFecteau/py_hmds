@@ -10,7 +10,7 @@ HMDS was released in 4 regions:
 * North America (Natsume - September 12th, 2006)
 * Europe (Rising Star Games - April 13th, 2007)
 * Australasia (Nintendo - June 7th, 2007)
-* South Korea ([??????](https://www.gametdb.com/DS/ABCK) - August 28th, 2009)
+* South Korea (Marvelous Interactive - August 28th, 2009)
 
 <br />
 
@@ -25,6 +25,7 @@ HMDS was released in 4 regions:
 |                	| 6455 - Harvest Moon DS (EU)                                    	| ABCPN1J11                             	| 1        	| 846CA75CA86781ED<br>D46B0D7891D5D73B<br>B87830712BA1C992<br>C5916EA2AC77D9F5 	|
 | Japan          	| 0100 - Bokujou Monogatari - Korobokkuru Station (v02) (J)(WRG) 	|                                       	| 2        	| 933E18C4FCC7854F<br>68113EE7A4FB0A47<br>8FAFB3A829610897<br>6D585C9ABB0BD666 	|
 |                	| 0483 - Bokujou Monogatari - Korobokkuru Station (J)(NdsBbs)    	|                                       	| 0        	| 801E29F03DE83AE4<br>028BC3AD112EFC65<br>B857F341EBC04178<br>B2148F21F4E579C9 	|
+| South Korea    	| KO HMDS                                                        	|                                       	| 0        	| 5720477CCF5AA1C9<br>314BDC0CF9AB2D31<br>6CE2F290AD11736D<br>CD2214CF37547E70 	|
 
 <b>Note:</b> The version number can be found in the 0x0000001E byte on the rom.
 
