@@ -7,4 +7,5 @@ This techical guide explores the technical aspects of the [Harvest Moon DS](http
 ## Table of content
 ### &ensp; 1. [Contributors](./general/contributors.md)
 ### &ensp; 2. [HMDS & HMDS-Cute Versions](./versions/versions.md)
+### &ensp; 3. [HMDS savefile structure](./savefile/savefile_structure.md)
 ### &ensp; 4. [RNG](./mechanics/rng/rng.md)
