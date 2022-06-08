@@ -2,7 +2,7 @@
 
 The savefiles for HMDS are split into two halves. First half goes from 0x00000010 to 0x00008BFF and the second half goes from 0x00008C00 to 0x000119FF.
 
-The table below is applies to both EU and NA. The second half of the table does not apply to JP, the first half of the sav is correct
+The table below is applies to both EU (1.0) and NA (1.0). The second half of the table does not apply to JP (1.0), the first half of the sav is correct
 
 ### Structure of the save file
 | range                 	| Item                                                          	|
