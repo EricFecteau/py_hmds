@@ -166,6 +166,12 @@ class Emulator:
         """Add frames actions (button, screen, program) to the frame list"""
 
         for _ in range(frames):
+
+            if frames == 0:
+                skip = True
+            else:
+                skip = False
+
             self.frame_list.append(
                 {
                     "keys": button,
@@ -173,7 +179,7 @@ class Emulator:
                     "ypos": ypos,
                     "function": run_function,
                     "function_args": function_args,
-                    "skip_frame": False,
+                    "skip_frame": skip,
                 }
             )
 
