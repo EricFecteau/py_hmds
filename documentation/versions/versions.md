@@ -10,6 +10,7 @@ HMDS was released in 4 regions:
 * North America (Natsume - September 12th, 2006)
 * Europe (Rising Star Games - April 13th, 2007)
 * Australasia (Nintendo - June 7th, 2007)
+* South Korea ([??????](https://www.gametdb.com/DS/ABCK) - August 28th, 2009)
 
 <br />
 
