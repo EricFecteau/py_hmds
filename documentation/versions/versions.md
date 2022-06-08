@@ -52,7 +52,7 @@ HMDS-Cute was realased in 2 regions:
 ### Available ROM versions for HMDS-Cute
 | Region         	| Rom name                                                        	| Serial code             	| Revision 	| SHA-256                                                                      	|
 |----------------	|-----------------------------------------------------------------	|-------------------------	|----------	|------------------------------------------------------------------------------	|
-| North American 	| 2201 - Harvest Moon DS Cute (USA)                               	| AB4EN0J19,<br>AB4EN0J41 	| 0        	| B6647C0A367AD52F<br>B9B6F3AFA24E6C3A<br>FE21C8BA588F5B8C<br>D70E53A1F5B0B636 	|
+| North American 	| 2201 - Harvest Moon DS Cute (USA)                               	| AB4EN0J19,<br>AB4EN0J22,<br>AB4EN0J41 	| 0        	| B6647C0A367AD52F<br>B9B6F3AFA24E6C3A<br>FE21C8BA588F5B8C<br>D70E53A1F5B0B636 	|
 | Japan          	| 0230 - Bokujou Monogatari - Colobockle Station for Girl (Japan) 	|                         	| 0        	| A37198B2475EC68A<br>30D58260FEEA620A<br>A19903ED00A9897F<br>F2366433DF477A96 	|
 
 <b>Note:</b> The version number can be found in the 0x0000001E byte on the rom.
