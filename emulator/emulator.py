@@ -4,6 +4,8 @@ import time
 
 from typing import Callable, Optional
 
+from tqdm import tqdm
+
 from emulator import tools
 from emulator.frontend import initializer
 from emulator.desmume import emulator
@@ -46,6 +48,10 @@ class Emulator:
         self.frame_list: list[dict] = []
 
         self.save_path = save_path
+
+    def __del__(self):
+        self.emu.destroy()
+        del self.emu
 
     def initialize_emulator(
         self, scale: float = 1.0, rightscreen: bool = False
@@ -166,12 +172,6 @@ class Emulator:
         """Add frames actions (button, screen, program) to the frame list"""
 
         for _ in range(frames):
-
-            if frames == 0:
-                skip = True
-            else:
-                skip = False
-
             self.frame_list.append(
                 {
                     "keys": button,
@@ -179,7 +179,16 @@ class Emulator:
                     "ypos": ypos,
                     "function": run_function,
                     "function_args": function_args,
-                    "skip_frame": skip,
+                    "skip_frame": False,
+                }
+            )
+        
+        if frames == 0:
+            self.frame_list.append(
+                {
+                    "function": run_function,
+                    "function_args": function_args,
+                    "skip_frame": True,
                 }
             )
 
@@ -279,5 +288,5 @@ class Emulator:
         if self.frontend:
             self.gui.run(program=self.emu_cycle, data=self.frame_list)
         else:
-            for _ in range(len(self.frame_list)):
+            for _ in tqdm(range(len(self.frame_list))):
                 self.emu_cycle(self.frame_list)
