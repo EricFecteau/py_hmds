@@ -36,14 +36,20 @@ def enter_calendar(emu: Emulator) -> None:
     emu.add("A", 1)
 
 
-def intro(emu: Emulator) -> None:
+def new_game(emu: Emulator):
 
-    """Automate the intro"""
-
+    """Get pas the main menu"""
     emu.add("", 440)
     emu.add("", 1, xpos=100, ypos=100)
     emu.add("", 120)
     emu.add("", 1, xpos=100, ypos=100)
+
+
+def intro(emu: Emulator) -> None:
+
+    """Automate the intro"""
+
+    new_game(emu)
     dialog(emu, 230)
     enter_name(emu, 114, 47)  # "E is for Exadrid"
     dialog(emu, 160)
