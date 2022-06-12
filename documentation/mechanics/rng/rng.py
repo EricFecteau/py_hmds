@@ -12,7 +12,9 @@ def get_random(mem, hmds_mem, data_list):
 
     """Get the data from the RNG value"""
 
-    data = mem.read(hmds_mem.get_mem_addr("rng"), 4, True)
+    size, addr = hmds_mem.get_mem_addr("rng")
+
+    data = mem.read(addr, size, True)
     data_list.append(data)
 
 
@@ -51,7 +53,7 @@ def main() -> None:
 
     mem = memory.Memory(emu)
 
-    hmds_mem = ml.MemoryAddresses("ABCEN0J12")
+    hmds_mem = ml.MemoryAddresses("NA1.0")
 
     mf.new_game(emu)
     emu.add("", 100)
