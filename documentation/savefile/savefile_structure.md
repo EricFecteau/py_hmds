@@ -13,14 +13,14 @@ The table below is applies to both EU (1.0) and NA (1.0). The second half of the
 | 0x00000255              | 6      | Name of the dog                                               	|
 | 0x00000265              | 6      | Name of the cat                                               	|
 | 0x00000275 - 0x00000425 | 6      | Name of the farm animals                                      	|
-| 0x00000465              | 15     | The season and the year                                       	|
+| 0x00000465              | 16     | The season and the year                                       	|
 | 0x00008E05              | 6      | Name of the farm                                              	|
 | 0x00008E15              | 6      | Name of the player                                            	|
 | 0x00008E45              | 6      | Name of the horse                                             	|
 | 0x00008E55              | 6      | Name of the dog                                               	|
 | 0x00008E65              | 6      | Name of the cat                                               	|
 | 0x00008E75 - 0x00009025 | 6      | Name of the farm animals                                      	|
-| 0x00009065              | 15     | The season and the year                                       	|
+| 0x00009065              | 16     | The season and the year                                       	|
 
 ## Regional differences
 
