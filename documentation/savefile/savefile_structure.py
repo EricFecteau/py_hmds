@@ -11,16 +11,16 @@ def getMarkdownTable():
     markdownTable = re.findall("^\| .{10,}\|$", markdownContent, re.M)
 
     markdownTableList = []
-    markdownTableVersion = 0
+    markdownTableRegion = 0
     for row in markdownTable:
         if re.search("range", row):
-            markdownTableVersion = markdownTableVersion + 1
+            markdownTableRegion = markdownTableRegion + 1
         item = row.split("|")
-        if markdownTableVersion == 1 and region == "JP":
+        if markdownTableRegion == 1 and region == "JP":
             markdownTableList.append(item[1:4])
-        elif markdownTableVersion == 2 and region == "NA":
+        elif markdownTableRegion == 2 and region == "NA":
             markdownTableList.append(item[1:4])
-        elif markdownTableVersion == 3 and region == "EU":
+        elif markdownTableRegion == 3 and region == "EU":
             markdownTableList.append(item[1:4])
     return markdownTableList
 
