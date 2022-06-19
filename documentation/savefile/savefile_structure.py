@@ -1,8 +1,9 @@
 """Script to output Savefile content for HMDS"""
 
+from email.policy import strict
 import sys, getopt, re, json
 
-def getSavefileTable():
+def getMarkdownTable():
     markdownFile = open("./savefile_structure.md", "r")
     markdownContent = markdownFile.read()
     markdownFile.close()
@@ -10,12 +11,20 @@ def getSavefileTable():
     markdownTable = re.findall("^\| .{10,}\|$", markdownContent, re.M)
 
     markdownTableList = []
+    markdownTableRegion = 0
     for row in markdownTable:
+        if re.search("range", row):
+            markdownTableRegion = markdownTableRegion + 1
         item = row.split("|")
-        markdownTableList.append(item[1:4])
+        if markdownTableRegion == 1 and region == "JP":
+            markdownTableList.append(item[1:4])
+        elif markdownTableRegion == 2 and region == "NA":
+            markdownTableList.append(item[1:4])
+        elif markdownTableRegion == 3 and region == "EU":
+            markdownTableList.append(item[1:4])
     return markdownTableList
 
-def getSavefileContent(inputfile):
+def getSavefileContent(inputfile: str):
     file = open(inputfile, "rb")
     content = file.read()
     file.close()
@@ -40,12 +49,13 @@ def getMultilineSavefileInfo(range, length: int, item: str):
         i = i + 1
 
 def printSavefileInfo(start: int, length: int, item: str):
-    print(f"{item}:", getSavefileInfo(start, length))
+    print(f"{item[1:]}:", getSavefileInfo(start, length))
 
 inputfile = ''
 outputfile = ''
+region = 'EU'
 try:
-    arguments, values = getopt.getopt(sys.argv[1:],"ho:i:",["infile=","outfile="])
+    arguments, values = getopt.getopt(sys.argv[1:],"hor:i:",["infile=","outfile=","region="])
 except getopt.GetoptError:
     sys.exit(2)
 for opt, arg in arguments:
@@ -56,13 +66,15 @@ for opt, arg in arguments:
         inputfile = arg
     elif opt in ("-o", "--outfile"):
         outputfile = arg
+    elif opt in ("-r", "--region"):
+        region = arg
 if inputfile == "":
     print("No input has been given")
     sys.exit(2)
 if outputfile == "":
     outputfile = inputfile
 
-table = getSavefileTable()
+table = getMarkdownTable()
 
 content = getSavefileContent(inputfile)
 
