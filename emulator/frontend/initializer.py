@@ -46,9 +46,9 @@ class GTKWindow:
 
         self.controller.resize()
 
-    def run(self, program, data):
+    def run(self, program, data, continual_func, function_args):
 
-        GLib.idle_add(program, data)
+        GLib.idle_add(program, data, continual_func, function_args)
 
         self.main_window.present()
         Gtk.main()

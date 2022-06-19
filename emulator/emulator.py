@@ -182,7 +182,7 @@ class Emulator:
                     "skip_frame": False,
                 }
             )
-        
+
         if frames == 0:
             self.frame_list.append(
                 {
@@ -192,7 +192,12 @@ class Emulator:
                 }
             )
 
-    def emu_cycle(self, action) -> bool:
+    def emu_cycle(
+        self,
+        action: dict,
+        continual_func: Optional[Callable] = None,
+        function_args: Optional[dict] = None,
+    ) -> bool:
 
         """Main loop for the emulator"""
 
@@ -227,6 +232,14 @@ class Emulator:
                 self.emu.input.touch_release()
 
             tools.add_keys(self.emu, frame_action["keys"])
+        else:
+            if continual_func is not None:
+
+                # Provide the args as kargs
+                if function_args is not None:
+                    continual_func(**function_args)
+                else:
+                    continual_func()
 
         self.emu.cycle()
 
@@ -279,14 +292,25 @@ class Emulator:
 
                 self.xpos = self.ypos = 0
 
-    def run(self):
+    def run(
+        self,
+        continual_func: Optional[Callable] = None,
+        function_args: Optional[dict] = None,
+    ):
 
         """Run the emulation"""
 
-        self.emu.input.keypad_update(0)
+        if self.emu is not None:
+            self.emu.input.keypad_update(0)
 
         if self.frontend:
-            self.gui.run(program=self.emu_cycle, data=self.frame_list)
+            if self.gui is not None:
+                self.gui.run(
+                    program=self.emu_cycle,
+                    data=self.frame_list,
+                    continual_func=continual_func,
+                    function_args=function_args,
+                )
         else:
             for _ in tqdm(range(len(self.frame_list))):
                 self.emu_cycle(self.frame_list)
