@@ -13,3 +13,9 @@ class Memory:
         """Read a 1, 2, 4 bytes from an address, signed or not"""
 
         return self.emu.emu.memory.read(address, address, size, signed)
+
+    def write(self, address: int, size: int, val: int) -> None:
+
+        """Write a 1, 2, 4 bytes to an address"""
+
+        self.emu.emu.memory.write(address, address, size, [val])
