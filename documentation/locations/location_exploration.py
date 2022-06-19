@@ -4,21 +4,12 @@ from hmds import movie_functions as mf
 from hmds import memory_addresses as ml
 
 
-def get_random(mem, hmds_mem, data_list):
+def force_value(mem, hmds_mem, val):
 
-    """Get the data from the RNG value"""
+    """Force the value (must have a screen transition for it to work)"""
 
-    size, addr = hmds_mem.get_mem_addr("rng")
-
-    data = mem.read(addr, size, True)
-    data_list.append(data)
-
-
-def clear_list(data_list: list) -> None:
-
-    """Clear the data_list list"""
-
-    del data_list[:]
+    size, addr = hmds_mem.get_mem_addr("screen_loc")
+    mem.write(addr, size, val)
 
 
 def main() -> None:
@@ -40,7 +31,20 @@ def main() -> None:
 
     hmds_mem = ml.MemoryAddresses("NA1.0")
 
-    mf.intro(emu)
+    # mf.intro(emu)
+    # emu.save("intro.ds0")
+
+    loc_to_warp = 0x2B
+
+    emu.load("intro.ds0")
+    emu.add("BU", 30)
+    emu.add("A", 1)
+    emu.add(
+        "",
+        0,
+        run_function=force_value,
+        function_args={"mem": mem, "hmds_mem": hmds_mem, "val": loc_to_warp},
+    )
 
     emu.run()
 

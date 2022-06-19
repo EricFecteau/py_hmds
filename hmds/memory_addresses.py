@@ -11,8 +11,8 @@ class MemoryAddresses:
 
         self.mem_loc: dict = {
             "rng": [4, {"NA1.0": 0x02193010}],
-            "char_loc": [2, {"NA1.0": 0x023D7AD8, "NA1.1": 0x023D7AD4}],
-            "screen_loc": [2, {"NA1.0": 0x023D3AC0, "NA1.1": 0x023D3AB0}],
+            "char_loc": [1, {"NA1.0": 0x023D7AD8, "NA1.1": 0x023D7AD4}],
+            "screen_loc": [1, {"NA1.0": 0x023D3AC0, "NA1.1": 0x023D3AB0}],
         }
 
     def get_mem_addr(self, mem_name: str) -> tuple[int, int]:
