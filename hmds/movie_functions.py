@@ -45,6 +45,18 @@ def new_game(emu: Emulator):
     emu.add("", 1, xpos=100, ypos=100)
 
 
+def talk_to_thomas(emu: Emulator) -> None:
+
+    """Skip the conversation with Thomas"""
+
+    emu.add("BR", 10)
+    emu.add("BD", 100)
+    dialog(emu, 300)
+    emu.add("D", 1)
+    emu.add("A", 1)
+    dialog(emu, 500)
+
+
 def intro(emu: Emulator) -> None:
 
     """Automate the intro"""
@@ -61,3 +73,4 @@ def intro(emu: Emulator) -> None:
     dialog(emu, 165)
     enter_name(emu, 84, 49)  # "C is for Cat"
     dialog(emu, 16070)
+    talk_to_thomas(emu)
