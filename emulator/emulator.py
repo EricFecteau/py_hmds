@@ -7,6 +7,7 @@ from typing import Callable, Optional
 from tqdm import tqdm
 
 from emulator import tools
+from emulator import overlay
 from emulator.frontend import initializer
 from emulator.desmume import emulator
 
@@ -48,6 +49,8 @@ class Emulator:
         self.frame_list: list[dict] = []
 
         self.save_path = save_path
+
+        self.overlay = overlay.Overlay(self)
 
     def __del__(self):
         self.emu.destroy()
@@ -255,7 +258,7 @@ class Emulator:
         self.gui.controller._main_draw.queue_draw()
         self.gui.controller._sub_draw.queue_draw()
 
-        self.gui.controller.renderer.add_overlay(self.overlay)
+        self.gui.controller.renderer.add_overlay(self.overlay.display_overlay)
 
         if self.second_timer == 0:
             self.second_timer = round(time.time() * 1000)
@@ -265,32 +268,6 @@ class Emulator:
             self.second_timer = 0
 
         return True
-
-    def overlay(self, ctx, display_id):
-
-        """CTX overlay on the emulator image"""
-
-        if display_id == 0:
-            pass
-            # ctx.set_source_rgba(1, 0, 0, 1)
-            # ctx.rectangle(25, 25, 75, 75)
-            # ctx.fill()
-        else:
-            # Cross hair
-            if self.xpos != 0 and self.ypos != 0:
-
-                ctx.set_line_width(0)
-                ctx.set_source_rgba(1, 0, 0, 0.5)
-                ctx.rectangle(self.xpos - 1, self.ypos - 1, 3, 3)
-
-                ctx.set_line_width(1)
-                ctx.move_to(self.xpos + 0.5, 0)
-                ctx.line_to(self.xpos + 0.5, SCREEN_HEIGHT)
-                ctx.move_to(0, self.ypos + 0.5)
-                ctx.line_to(SCREEN_WIDTH, self.ypos + 0.5)
-                ctx.stroke()
-
-                self.xpos = self.ypos = 0
 
     def run(
         self,
