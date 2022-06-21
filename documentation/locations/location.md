@@ -3,11 +3,11 @@
 ## Important memory locations
 Character Location: 0x023D7AD8 (NA1.0) | 0x023D7AD4 (NA1.1)
 Screen Location: 0x023D3AC0 (NA1.0) |  0x023D3AB0 (NA1.1)
+Character X: 0x023D3E71 (NA1.0)
+Character Y: 0x023D3E75 (NA1.0)
+Screen X: 0x023D7AD4 (NA1.0)
+Screen Y: 0x023D7AD6 (NA1.0)
 
-<!-- mem_screenX = {0x023D3E71}
-mem_screenY = {0x023D3E75}
-mem_charX = {0x023D7AD4}
-mem_charY = {0x023D7AD6} -->
 
 ### Map location table
 
