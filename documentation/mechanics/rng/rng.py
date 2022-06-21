@@ -25,6 +25,13 @@ def clear_list(data_list: list) -> None:
     del data_list[:]
 
 
+def print_list(data_list: list) -> None:
+
+    """Store the data in the CSV"""
+
+    print(data_list)
+
+
 def store_list(data_list: list) -> None:
 
     """Store the data in the CSV"""
@@ -36,7 +43,7 @@ def store_list(data_list: list) -> None:
         csv_writer.writerow(data_list)
 
 
-def main() -> None:
+def main(test: bool = False) -> None:
 
     """Main function"""
 
@@ -59,17 +66,26 @@ def main() -> None:
     emu.add("", 100)
 
     data_list: list = ["RNG_Value"]
-    store_list(data_list)
+    if test:
+        print_to = print_list
+        num = 100
+        denom = 10
+    else:
+        print_to = store_list
+        num = 1_000_000
+        denom = 10_000
 
-    for _ in range(int(1_000_000 / 10_000)):
+    print_to(data_list)
+
+    for _ in range(int(num / denom)):
         emu.add("", 0, run_function=clear_list, function_args={"data_list": data_list})
         emu.add(
             "",
-            10_000,
+            denom,
             run_function=get_random,
             function_args={"mem": mem, "hmds_mem": hmds_mem, "data_list": data_list},
         )
-        emu.add("", 0, run_function=store_list, function_args={"data_list": data_list})
+        emu.add("", 0, run_function=print_to, function_args={"data_list": data_list})
         emu.save("rng.ds0")
 
     emu.run()
@@ -79,4 +95,4 @@ def main() -> None:
 
 if __name__ == "__main__":
 
-    main()
+    main(test=True)
