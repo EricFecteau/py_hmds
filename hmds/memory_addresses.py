@@ -13,10 +13,12 @@ class MemoryAddresses:
             "rng": [4, {"NA1.0": 0x02193010}],
             "char_loc": [1, {"NA1.0": 0x023D7AD8, "NA1.1": 0x023D7AD4}],
             "screen_loc": [1, {"NA1.0": 0x023D3AC0, "NA1.1": 0x023D3AB0}],
-            "char_x": [1, {"NA1.0": 0x023D3E71}],
-            "char_y": [1, {"NA1.0": 0x023D3E75}],
-            "screen_x": [1, {"NA1.0": 0x023D7AD4}],
-            "screen_y": [1, {"NA1.0": 0x023D7AD6}],
+            "screen_x0": [1, {"NA1.0": 0x023D3E71}],
+            "screen_x1": [1, {"NA1.0": 0x023D3E72}],
+            "screen_y0": [1, {"NA1.0": 0x023D3E75}],
+            "screen_y1": [1, {"NA1.0": 0x023D3E76}],
+            "char_x": [2, {"NA1.0": 0x023D7AD4}],
+            "char_y": [2, {"NA1.0": 0x023D7AD6}],
         }
 
     def get_mem_addr(self, mem_name: str) -> tuple[int, int]:
