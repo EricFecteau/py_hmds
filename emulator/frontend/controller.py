@@ -432,6 +432,7 @@ class SoftwareRenderer(AbstractRenderer):
         else:
             ctx.translate(-base_w * self._scale / 2, -base_h * self._scale / 2)
         ctx.scale(self._scale, self._scale)
+
         if display_id == 0:
             ctx.set_source_surface(self._upper_image)
         else:
