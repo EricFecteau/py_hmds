@@ -1,5 +1,7 @@
 """Display XY when moving"""
 
+import random
+
 from emulator import emulator
 from emulator import memory
 from emulator import overlay
@@ -14,14 +16,30 @@ def print_value(
 
     """Force the value (must have a screen transition for it to work)"""
 
-    size, addr = hmds_mem.get_mem_addr("screen_x")
+    size, addr = hmds_mem.get_mem_addr("char_x")
     screen.write(
         xpos=0, ypos=8, string=f"x = {mem.read(addr, size, False)}", display_id=1
     )
 
-    size, addr = hmds_mem.get_mem_addr("screen_y")
+    size, addr = hmds_mem.get_mem_addr("char_y")
     screen.write(
         xpos=0, ypos=16, string=f"y = {mem.read(addr, size, False)}", display_id=1
+    )
+
+    size, addr = hmds_mem.get_mem_addr("screen_x0")
+    pixels = mem.read(addr, 1, False)
+    size, addr = hmds_mem.get_mem_addr("screen_x1")
+    steps = mem.read(addr, size, False)
+    screen.write(
+        xpos=50, ypos=8, string=f"x = {(steps*255)+pixels}", display_id=1
+    )
+
+    size, addr = hmds_mem.get_mem_addr("screen_y0")
+    pixels = mem.read(addr, 1, False)
+    size, addr = hmds_mem.get_mem_addr("screen_y1")
+    steps = mem.read(addr, size, False)
+    screen.write(
+        xpos=50, ypos=16, string=f"x = {(steps*255)+pixels}", display_id=1
     )
 
 
@@ -47,16 +65,11 @@ def main() -> None:
     # emu.save("intro.ds0")
 
     emu.load("intro.ds0")
-    emu.add("BR", 50)
-    emu.add(
-        "BR",
-        100,
-        run_function=print_value,
+    
+    emu.run(
+        continual_func=print_value,
         function_args={"screen": emu.overlay, "mem": mem, "hmds_mem": hmds_mem},
     )
-    emu.add("BU", 50)
-
-    emu.run()
 
     del emu
 
