@@ -5,12 +5,16 @@
 Red slot: 0x023D6B10 (NA1.0) <br /> 
 Green slot: 0x023D6B14 (NA1.0) <br />
 Blue slot: 0x023D6B18 (NA1.0) <br />
-Rest of bag (every 8 bytes): 0x023D6B28 (NA1.0) <br />
-Item price table: 0x0215AB28 (NA1.0) <br />
+Rest of bag (every 4 bytes): 0x023D6B28 (NA1.0) <br />
+Item price table: 0x0215AB24 (NA1.0) <br />
 
 ## Inventory data array
 
-The inventory data array is an array of words (4 bytes) for each item that is included in each slot. The first two bytes identify the item (see item table below), the next byte is the quantity and the last byte is the quality of the tool, if the item is a tool (see quality table below).
+The inventory data array is an array of words (4 bytes) for each item that is included in each slot. The first two bytes identify the item (see item table below), the next byte is the quality (if the item is a tool or accessory see quality table below) and the last byte is the quantity of the tool.
+
+## Item price table
+
+The price of the item is in 12 bytes chunks per item, the first 4 bytes is the price of the item. The remaining 8 bytes is unclear.
 
 ## Item table
 
@@ -156,7 +160,7 @@ The inventory data array is an array of words (4 bytes) for each item that is in
 \* These items have a sprite but do not have accompanying text. <br />
 † These items crash the game when in your inventory.
 
-## Quality Table
+## Quality Table (tool)
 |    	|          	|    	|         	|
 |----	|----------	|----	|---------	|
 | 00 	| Basic    	| 05 	| Blessed 	|
@@ -166,3 +170,8 @@ The inventory data array is an array of words (4 bytes) for each item that is in
 | 04 	| Mystrile 	| 09 	|         	|
 
 \* 0x08 gives you another red-looking axe without any text. It has the same power as the mythic level. It gives you a “copper” colour tool with the same power level as mythic for other tools.
+
+## Quality Table (accessory)
+|    	|          	|    	|         	|
+|----	|----------	|----	|---------	|
+| 00 	| Cursed   	| 01 	| Blessed 	|

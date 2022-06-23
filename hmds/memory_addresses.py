@@ -10,7 +10,15 @@ class MemoryAddresses:
         self.version = version
 
         self.mem_loc: dict = {
+            # RNG
             "rng": [4, {"NA1.0": 0x02193010}],
+            # Items and inventory
+            "red_slot": [4, {"NA1.0": 0x023D6B10}],
+            "green_slot": [4, {"NA1.0": 0x023D6B14}],
+            "blue_slot": [4, {"NA1.0": 0x023D6B18}],
+            "bag": [4, {"NA1.0": 0x023D6B28}],
+            "item_price": [4, {"NA1.0": 0x0215AB28}],
+            # Character location and screen
             "char_loc": [1, {"NA1.0": 0x023D7AD8, "NA1.1": 0x023D7AD4}],
             "screen_loc": [1, {"NA1.0": 0x023D3AC0, "NA1.1": 0x023D3AB0}],
             "screen_x0": [1, {"NA1.0": 0x023D3E71}],
