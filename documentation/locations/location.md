@@ -1,18 +1,18 @@
 # Location information
 
 ## Important memory locations
-Character Location: 0x023D7AD8 (NA1.0) | 0x023D7AD4 (NA1.1)
-Screen Location: 0x023D3AC0 (NA1.0) |  0x023D3AB0 (NA1.1)
-Character X: 0x023D7AD4 (NA1.0)
-Character Y: 0x023D7AD6 (NA1.0)
-Screen X: 0x023D3E71 (NA1.0)
-Screen Y: 0x023D3E75 (NA1.0)
+Character Location: 0x023D7AD8 (NA1.0) | 0x023D7AD4 (NA1.1) <br />
+Screen Location: 0x023D3AC0 (NA1.0) |  0x023D3AB0 (NA1.1) <br />
+Character X: 0x023D7AD4 (NA1.0) <br />
+Character Y: 0x023D7AD6 (NA1.0) <br />
+Screen X: 0x023D3E71 (NA1.0) <br />
+Screen Y: 0x023D3E75 (NA1.0) <br />
 
-### Screen X and Y
+## Screen X and Y
 
 The screen X and Y values can be calculated as two consecutive bytes from the "Screen X" and "Screen Y" where the formula is (byte0+(byte1*255)).
 
-### Map location table
+## Map location table
 
 ![](map.png)
 |    	|                                             	|    	|                                 	|    	|                            	|
