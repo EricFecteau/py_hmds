@@ -11,3 +11,5 @@ This techical guide explores the technical aspects of the [Harvest Moon DS](http
 ### &ensp; 4. [RNG](./mechanics/rng/rng.md)
 ### &ensp; 5. [Locations & Map](./locations/location.md)
 ### &ensp; 6. [Inventory](./inventory/inventory.md)
+### &ensp; 7. [Mines](./mines/mines.md)
+### &ensp; 8. [NPC](./npc/npc.md)
