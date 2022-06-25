@@ -14,6 +14,18 @@ class Memory:
 
         return self.emu.emu.memory.read(address, address, size, signed)
 
+    def read_array(
+        self, address: int, array_size: int, size: int, signed: bool
+    ) -> list[int]:
+
+        """Read an array of 1, 2, 4 bytes from an array of data, signed or not"""
+
+        array = list(
+            self.emu.emu.memory.read(address, address + array_size, size, signed)
+        )
+
+        return array
+
     def write(self, address: int, size: int, val: int) -> None:
 
         """Write a 1, 2, 4 bytes to an address"""
