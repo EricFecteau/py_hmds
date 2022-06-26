@@ -25,8 +25,12 @@ class MemoryAddresses:
             "screen_x1": [1, {"NA1.0": 0x023D3E72}],
             "screen_y0": [1, {"NA1.0": 0x023D3E75}],
             "screen_y1": [1, {"NA1.0": 0x023D3E76}],
-            "char_x": [2, {"NA1.0": 0x023D7AD4}],
-            "char_y": [2, {"NA1.0": 0x023D7AD6}],
+            "char_x_read": [2, {"NA1.0": 0x023D7AD4}],
+            "char_y_read": [2, {"NA1.0": 0x023D7AD6}],
+            "char_x_write": [4, {"NA1.0": 0x23D37B8}],
+            "char_y_write": [4, {"NA1.0": 0x23D37BC}],
+            "trigger_0": [2, {"NA1.0": 0x23D31F0}],
+            "trigger_1": [1, {"NA1.0": 0x23D31E8}],
             # Mines
             "mine_floor_num": [1, {"NA1.0": 0x023DBD2E, "NA1.1": 0x023DBD2A}],
             "floor_x_size": [1, {"NA1.0": 0x022C3EC4, "NA1.1": 0x022C6C84}],
@@ -78,16 +82,16 @@ class MemoryAddresses:
         }
 
         self.npc_info: dict = {
-            "loc": {"addr_add": 1, "addr_size": 1},
-            "entrance_loc": {"addr_add": 2, "addr_size": 1},
-            "prev_loc": {"addr_add": 3, "addr_size": 1},
-            "exit_prev_loc": {"addr_add": 4, "addr_size": 1},
-            "fp": {"addr_add": 5, "addr_size": 1},
-            "interact": {"addr_add": 6, "addr_size": 2},
-            "lp": {"addr_add": 10, "addr_size": 2},
-            "path": {"addr_add": 21, "addr_size": 0},
-            "path_timer": {"addr_add": 29, "addr_size": 2},
-            "bump_timer": {"addr_add": 33, "addr_size": 2},
+            "loc": {"addr_add": 0, "addr_size": 1},
+            "entrance_loc": {"addr_add": 1, "addr_size": 1},
+            "prev_loc": {"addr_add": 2, "addr_size": 1},
+            "exit_prev_loc": {"addr_add": 3, "addr_size": 1},
+            "fp": {"addr_add": 4, "addr_size": 1},
+            "interact": {"addr_add": 5, "addr_size": 2},
+            "lp": {"addr_add": 9, "addr_size": 2},
+            "path": {"addr_add": 20, "addr_size": 0},
+            "path_timer": {"addr_add": 28, "addr_size": 2},
+            "bump_timer": {"addr_add": 32, "addr_size": 2},
         }
 
     def get_mem_addr(self, mem_name: str) -> tuple[int, int]:
