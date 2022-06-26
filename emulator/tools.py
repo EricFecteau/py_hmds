@@ -85,3 +85,15 @@ def reset_output(save: tuple[int, int], null_fds: list[int]):
     # close the temporary fds
     os.close(null_fds[0])
     os.close(null_fds[1])
+
+
+def hex_list(list_to_hex: list[int]) -> list[str]:
+
+    """Convert all the numbers in a list to hex"""
+
+    new_list: list[str] = []
+
+    for item in list_to_hex:
+        new_list.append(hex(item))
+
+    return new_list
