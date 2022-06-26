@@ -39,7 +39,7 @@ def main() -> None:
 
     hmds_mem = ml.MemoryAddresses("NA1.0")
 
-    npc = "Carter"
+    npc = "Takakura"
 
     # mf.intro(emu)
     # emu.save("intro.ds0")
