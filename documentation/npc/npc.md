@@ -32,7 +32,7 @@ Table of NPC locations (new NPC every 8 bytes): 0x023D7AE0 (NA1.0)
 | 3     	| Previous location (see Map section for byte values)*                 	|
 | 4     	| Exit ID of previous location*                                        	|
 | 5     	| Friendship points                                                    	|
-| 6-7   	| Interaction (did you talk to the NPC today, did you give it a gift…) 	|
+| 6        	| Interaction (did you talk to the NPC today, did you give it a gift…) 	|
 | 8-9   	|                                                                      	|
 | 10-11 	| Love points                                                          	|
 | 12-20 	|                                                                      	|

@@ -32,7 +32,8 @@ class MemoryAddresses:
             "trigger_0": [2, {"NA1.0": 0x23D31F0}],
             "trigger_1": [1, {"NA1.0": 0x23D31E8}],
             # Mines
-            "mine_floor_num": [1, {"NA1.0": 0x023DBD2E, "NA1.1": 0x023DBD2A}],
+            "mine_num": [1, {"NA1.0": 0x023DBD2D}],
+            "mine_floor_num": [2, {"NA1.0": 0x023DBD2E, "NA1.1": 0x023DBD2A}],
             "floor_x_size": [1, {"NA1.0": 0x022C3EC4, "NA1.1": 0x022C6C84}],
             "floor_y_size": [1, {"NA1.0": 0x022C3EC5, "NA1.1": 0x022C6C86}],
             "floor_data_array": [1, {"NA1.0": 0x023DB964, "NA1.1": 0x023DB960}],
@@ -87,7 +88,7 @@ class MemoryAddresses:
             "prev_loc": {"addr_add": 2, "addr_size": 1},
             "exit_prev_loc": {"addr_add": 3, "addr_size": 1},
             "fp": {"addr_add": 4, "addr_size": 1},
-            "interact": {"addr_add": 5, "addr_size": 2},
+            "interact": {"addr_add": 5, "addr_size": 1},
             "lp": {"addr_add": 9, "addr_size": 2},
             "path": {"addr_add": 20, "addr_size": 0},
             "path_timer": {"addr_add": 28, "addr_size": 2},

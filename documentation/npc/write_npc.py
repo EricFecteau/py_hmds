@@ -1,4 +1,3 @@
-from cProfile import run
 from emulator import emulator
 from emulator import memory
 from emulator import overlay
