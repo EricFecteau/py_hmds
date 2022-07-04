@@ -62,7 +62,7 @@ class Emulator:
 
         """Initialize the emulator and frontend"""
 
-        save, null_fds = tools.suppress_output()
+        save = tools.suppress_output()
 
         # Load desmume
         self.emu = emulator.DeSmuME()  # type: ignore[attr-defined]
@@ -98,7 +98,7 @@ class Emulator:
                 ),
             )
 
-        tools.reset_output(save, null_fds)
+        tools.reset_output(save)
 
         # Do you want a frontend?
         if self.frontend:
@@ -120,9 +120,10 @@ class Emulator:
 
         def _load(file_name):
 
-            save, null_fds = tools.suppress_output()
+            save = tools.suppress_output()
             self.emu.savestate.load_file(f"{self.save_path}{file_name}")
-            tools.reset_output(save, null_fds)
+            tools.reset_output(save)
+
             with open(
                 f"{self.save_path}{file_name}.frame", "r", encoding="utf-8"
             ) as frame_file:
@@ -144,9 +145,9 @@ class Emulator:
 
         def _save(file_name):
 
-            save, null_fds = tools.suppress_output()
+            save = tools.suppress_output()
             self.emu.savestate.save_file(f"{self.save_path}{file_name}")
-            tools.reset_output(save, null_fds)
+            tools.reset_output(save)
 
             with open(
                 f"{self.save_path}{file_name}.frame", "w", encoding="utf-8"
