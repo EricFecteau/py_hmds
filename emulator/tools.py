@@ -61,30 +61,28 @@ def rm_keys(emu, keys):
         emu.input.keypad_rm_key(256)
 
 
-def suppress_output() -> tuple[tuple[int, int], list[int]]:
+def suppress_output() -> tuple[int, int]:
 
     """Suppress the output of DESMUME"""
 
-    # open 2 fds
-    null_fds = [os.open(os.devnull, os.O_RDWR) for x in range(0, 2)]
-    # save the current file descriptors to a tuple
-    save = os.dup(1), os.dup(2)
-    # put /dev/null fds on 1 and 2
-    os.dup2(null_fds[0], 1)
-    os.dup2(null_fds[1], 2)
-    return save, null_fds
+    save1 = os.dup(1)
+    save2 = os.dup(2)
+    devnull = os.open(os.devnull, os.O_RDWR)
+    os.dup2(devnull, 1)
+    os.dup2(devnull, 2)
+    os.close(devnull)
+
+    return (save1, save2)
 
 
-def reset_output(save: tuple[int, int], null_fds: list[int]):
+def reset_output(save: tuple[int, int]) -> None:
 
-    """Restore the output, to print to the log"""
+    """Reset the output of DESMUME"""
 
-    # restore file descriptors so I can print the results
     os.dup2(save[0], 1)
     os.dup2(save[1], 2)
-    # close the temporary fds
-    os.close(null_fds[0])
-    os.close(null_fds[1])
+    os.close(save[0])
+    os.close(save[1])
 
 
 def hex_list(list_to_hex: list[int], format_str: str = "") -> list[str]:
