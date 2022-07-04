@@ -25,7 +25,7 @@ def ready_scene(mem: memory.Memory, hmds_mem: ml.MemoryAddresses):
     mem.write(addr, size, 3)
 
     size, addr = hmds_mem.get_mem_addr("mine_floor_num")
-    mem.write(addr, size, 101)
+    mem.write(addr, size, 365)
 
 
 def store(mem: memory.Memory):
