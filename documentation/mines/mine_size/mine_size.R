@@ -1,7 +1,7 @@
 library(tidyverse)
 library(ggplot2)
 
-mines <- read.csv("./documentation/mines/mine_size.csv") %>%
+mines <- read.csv("./documentation/mines/mine_size/mine_size.csv") %>%
     mutate(
         rownum = row_number() - 1,
         floor_size = case_when(

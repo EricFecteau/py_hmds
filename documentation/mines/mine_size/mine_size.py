@@ -158,7 +158,10 @@ def start_csv():
     ]
 
     with open(
-        "./documentation/mines/mine_size.csv", "w", newline="", encoding="utf-8"
+        "./documentation/mines/mine_size/mine_size.csv",
+        "w",
+        newline="",
+        encoding="utf-8",
     ) as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=col_names)
         writer.writeheader()
@@ -225,7 +228,10 @@ def send_to_csv(mine_items: list):
     ]
 
     with open(
-        "./documentation/mines/mine_size.csv", "a+", newline="", encoding="utf-8"
+        "./documentation/mines/mine_size/mine_size.csv",
+        "a+",
+        newline="",
+        encoding="utf-8",
     ) as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=col_names)
         writer.writerows(mine_items)
