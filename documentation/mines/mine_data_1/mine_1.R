@@ -20,7 +20,8 @@ mine <- mine %>%
 for (col in col_names) {
     ggplot(data = mine, mapping = aes(x = floor_num)) +
         geom_bar(aes(weight = get(col))) +
-        theme(axis.title.y = element_blank(), axis.title.x = element_blank())
+        scale_x_continuous(breaks = 1:10) +
+        labs(y = "Count", x = "Floor number")
 
     ggsave(
         file = paste0("./documentation/mines/mine_data_1/plots/", col, ".png"),
