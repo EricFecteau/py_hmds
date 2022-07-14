@@ -8,7 +8,9 @@ verify <- mine %>% count(floor_num)
 
 col_names <- colnames(mine %>%
     summarise(across(where(is.numeric), sum)) %>%
-    select(-c(attempt, mine_num, floor_num, no.rock, empty.tile)) %>%
+    select(-c(
+        attempt, mine_num, floor_num, no.rock, empty.tile, staircase.up
+    )) %>%
     select(where(~ sum(.) > 0)))
 
 mine <- mine %>%
