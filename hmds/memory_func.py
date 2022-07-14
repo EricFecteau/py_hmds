@@ -114,15 +114,15 @@ def summarize_mine_floor(
             mine_items["emerald"] += 1
         elif rock == "9" and mine_num == 1:
             mine_items["ruby"] += 1
-        elif rock == "A" and mine_num == 1:
+        elif rock == "a" and mine_num == 1:
             mine_items["topaz"] += 1
-        elif rock == "B" and mine_num == 1:
+        elif rock == "b" and mine_num == 1:
             mine_items["peridot"] += 1
-        elif rock == "C" and mine_num == 1:
+        elif rock == "c" and mine_num == 1:
             mine_items["fluorite"] += 1
-        elif rock == "D" and mine_num == 1:
+        elif rock == "d" and mine_num == 1:
             mine_items["agate"] += 1
-        elif rock == "E" and mine_num == 1:
+        elif rock == "e" and mine_num == 1:
             mine_items["amethyst"] += 1
         elif rock == "7" and mine_num == 2:
             mine_items["spring sun"] += 1
@@ -130,13 +130,13 @@ def summarize_mine_floor(
             mine_items["summer sun"] += 1
         elif rock == "9" and mine_num == 2:
             mine_items["fall sun"] += 1
-        elif rock == "A" and mine_num == 2:
+        elif rock == "a" and mine_num == 2:
             mine_items["winter sun"] += 1
-        elif rock == "B" and mine_num == 2:
+        elif rock == "b" and mine_num == 2:
             mine_items["mythic stone"] += 1
-        elif rock == "C" and mine_num == 2:
+        elif rock == "c" and mine_num == 2:
             mine_items["adamantite"] += 1
-        elif rock == "D" and mine_num == 2:
+        elif rock == "d" and mine_num == 2:
             mine_items["orichalc"] += 1
         elif rock == "3" and mine_num == 3:
             mine_items["blue wonderful"] += 1
@@ -152,9 +152,9 @@ def summarize_mine_floor(
             mine_items["purple wonderful"] += 1
         elif rock == "9" and mine_num == 3:
             mine_items["indigo wonderful"] += 1
-        elif rock == "A" and mine_num == 3:
+        elif rock == "a" and mine_num == 3:
             mine_items["black wonderful"] += 1
-        elif rock == "B" and mine_num == 3:
+        elif rock == "b" and mine_num == 3:
             mine_items["white wonderful"] += 1
 
         if tiled == "0":
@@ -183,13 +183,13 @@ def summarize_mine_floor(
             mine_items["black grass"] += 1
         if tiled == "8" and mine_num == 3:
             mine_items["lithograph"] += 1
-        if tiled == "C":
+        if tiled == "c":
             mine_items["tiled square"] += 1
-        if tiled == "D":
+        if tiled == "d":
             mine_items["unearthed hole"] += 1
-        if tiled == "E":
+        if tiled == "e":
             mine_items["staircase up"] += 1
-        if tiled == "F":
+        if tiled == "f":
             mine_items["staircase down"] += 1
 
     return mine_items
