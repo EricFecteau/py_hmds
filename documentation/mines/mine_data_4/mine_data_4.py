@@ -208,7 +208,7 @@ def main() -> None:
     # mf.intro(emu)
     # emu.save("intro.ds0")
 
-    emu.load("intro.ds0")
+    # emu.load("intro.ds0")
 
     emu.add("BU", 20)
     emu.add("A", 1)
@@ -220,7 +220,7 @@ def main() -> None:
 
     mine_items: list[dict] = []
     mine_num = 4  # indexed to one
-    max_floor = 65535  # indexed to one
+    max_floor = 1000  # indexed to one
     attempts = 100  # per floor
 
     emu.add(
