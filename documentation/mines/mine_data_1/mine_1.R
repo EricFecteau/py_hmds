@@ -17,7 +17,7 @@ mine <- mine %>%
     group_by(floor_num) %>%
     select(all_of(col_names), floor_num) %>%
     summarise(across(where(is.numeric), mean)) %>%
-    mutate(across(where(is.numeric), round, 1))
+    mutate(across(where(is.numeric), round, 2))
 
 for (col in col_names) {
     ggplot(data = mine, mapping = aes(x = floor_num)) +
