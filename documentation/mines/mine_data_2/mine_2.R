@@ -1,6 +1,7 @@
 library(tidyverse)
 library(ggplot2)
 library(ggtext)
+library(ggrepel)
 
 dir.create("./documentation/mines/mine_data_2/plots")
 mine <- read.csv("./documentation/mines/mine_data_2/mine_data_2.csv")
@@ -9,7 +10,10 @@ verify <- mine %>% count(floor_num)
 
 col_names <- colnames(mine %>%
     summarise(across(where(is.numeric), sum)) %>%
-    select(-c(attempt, mine_num, floor_num, no.rock, empty.tile)) %>%
+    select(-c(
+        attempt, mine_num, floor_num, no.rock, empty.tile,
+        staircase.up
+    )) %>%
     select(where(~ sum(.) > 0)))
 
 mine <- mine %>%
@@ -35,11 +39,6 @@ for (col in col_names) {
                     case_when(
                         get(col) > 20 & floor_num > 20 ~ paste0(floor_num)
                     ),
-                col == "emerald" ~
-                    case_when(
-                        get(col) > 10 | floor_num %in% c(63, 255) ~
-                            paste0(floor_num)
-                    ),
                 col == "junk.ore" ~
                     case_when(
                         get(col) > 14 ~ paste0(floor_num)
@@ -48,10 +47,62 @@ for (col in col_names) {
                     case_when(
                         get(col) > 50 ~ paste0(floor_num)
                     ),
+                col == "lithograph" ~
+                    case_when(
+                        floor_num %% 50 == 0 ~ paste0(floor_num)
+                    )
+            ),
+            lab2 = case_when(
+                col == "black.grass" ~
+                    case_when(
+                        get(col) > 20 & get(col) < 30 ~ paste0(floor_num),
+                        get(col) > 30 & floor_num %in% c(3, 6, 9, 12) ~
+                            paste0(floor_num)
+                    ),
+                col == "agate" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
+                col == "amethyst" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
+                col == "emerald" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
+                col == "fluorite" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
                 col == "moon.stone" ~
                     case_when(
-                        get(col) > 10 | floor_num %in% c(83, 255) ~
-                            paste0(floor_num)
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
+                col == "peridot" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
+                col == "ruby" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
+                col == "sand.rose" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
+                    ),
+                col == "topaz" ~
+                    case_when(
+                        get(col) > 5 ~ paste0(floor_num),
+                        floor_num == 255 ~ paste0(floor_num)
                     ),
                 col == "pink.diamond" ~
                     case_when(
@@ -59,30 +110,10 @@ for (col in col_names) {
                             102, 123, 153, 183,
                             201, 204, 207, 213,
                             222, 225, 231, 234,
-                            237, 243, 252
+                            237, 243, 252, 105, 108
                         ) ~
                             paste0(floor_num)
                     ),
-                col == "ruby" ~
-                    case_when(
-                        get(col) > 10 | floor_num %in% c(53, 255) ~
-                            paste0(floor_num)
-                    ),
-                col == "sand.rose" ~
-                    case_when(
-                        get(col) > 10 | floor_num %in% c(73, 255) ~
-                            paste0(floor_num)
-                    ),
-                col == "lithograph" ~
-                    case_when(
-                        floor_num %% 50 == 0 ~ paste0(floor_num)
-                    ),
-                col == "black.grass" ~
-                    case_when(
-                        get(col) > 20 & get(col) < 30 ~ paste0(floor_num),
-                        get(col) > 30 & floor_num %in% c(3, 6, 9, 12) ~
-                            paste0(floor_num)
-                    )
             )
         )
 
@@ -96,10 +127,18 @@ for (col in col_names) {
         # Text
         geom_richtext(
             data = subset(mine_item, !is.na(lab)),
-            aes(y = get(col)),
+            aes(y = get(col), label = lab),
             vjust = -0.2,
             size = 3.5,
             label.padding = unit(1, "pt"),
+        ) +
+        # Text (all)
+        geom_label_repel(
+            data = subset(mine_item, !is.na(lab2)),
+            aes(y = get(col), label = lab2),
+            size = 3.5,
+            min.segment.length = 0,
+            max.overlaps = 20
         ) +
         labs(y = "Count", x = "Floor number")
 

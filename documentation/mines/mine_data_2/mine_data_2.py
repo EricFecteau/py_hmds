@@ -208,13 +208,13 @@ def main() -> None:
     # mf.intro(emu)
     # emu.save("intro.ds0")
 
-    emu.load("intro.ds0")
+    # emu.load("intro.ds0")
 
-    emu.add("BU", 20)
-    emu.add("A", 1)
-    emu.add("", 24)
+    # emu.add("BU", 20)
+    # emu.add("A", 1)
+    # emu.add("", 24)
 
-    emu.save("temp.ds0")
+    # emu.save("temp.ds0")
 
     emu.load("temp.ds0")
 
@@ -223,19 +223,20 @@ def main() -> None:
     max_floor = 255  # indexed to one
     attempts = 100  # per floor
 
-    emu.add(
-        "",
-        0,
-        run_function=start_csv,
-        function_args={"mine_num": mine_num},
-    )
+    # emu.add(
+    #     "",
+    #     0,
+    #     run_function=start_csv,
+    #     function_args={"mine_num": mine_num},
+    # )
 
-    for floor in range(1, max_floor + 1):
+    for floor in range(118, max_floor + 1):
         for attempt in range(0, attempts):
 
             emu.load("temp.ds0")
 
             # To speed up everything, so that we are not waiting forever when there are 1000 attempts
+
             if attempt % 25 == 0:
                 emu.add("", 25)
                 emu.save("temp.ds0")
