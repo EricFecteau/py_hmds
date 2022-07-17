@@ -56,6 +56,10 @@ for (col in col_names) {
                     case_when(
                         floor_num < 50 & get(col) > 0 ~ paste0(floor_num)
                     ),
+                col == "winter.sun" ~
+                    case_when(
+                        floor_num < 50 & get(col) > 0 ~ paste0(floor_num)
+                    ),
                 col == "copper" ~
                     case_when(
                         floor_num < 50 & get(col) > 10 ~ paste0(floor_num)
@@ -71,6 +75,11 @@ for (col in col_names) {
                 col == "silver" ~
                     case_when(
                         floor_num < 50 & get(col) > 10 ~ paste0(floor_num)
+                    ),
+                col == "mythic.stone" ~
+                    case_when(
+                        floor_num < 50 & get(col) > 0 ~ paste0(floor_num),
+                        get(col) > 3 ~ paste0(floor_num)
                     ),
             )
         )
