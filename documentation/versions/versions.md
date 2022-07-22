@@ -1,7 +1,7 @@
 
 # HMDS & HMDS-Cute Versions
 
-HMDS and HMDS-Cute were released in multiple regions. Many of the regions also receved multiple revisions to the game.
+HMDS and HMDS-Cute were released in multiple regions. Many of the regions also received multiple revisions to the game.
 
 ## HMDS
 
@@ -45,7 +45,7 @@ Physical cartridges with no known associated ROM also exist. Different versions 
 
 ## HMDS-Cute
 
-HMDS-Cute was realased in 2 regions:
+HMDS-Cute was released in 2 regions:
 * Japan (Marvelous Interactive - December 8th, 2005)
 * North America (Natsume - March 25th, 2008)
 * South Korea ([???????](https://www.gametdb.com/DS/AB4K) - September 26th, 2009)
