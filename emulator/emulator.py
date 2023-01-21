@@ -62,7 +62,7 @@ class Emulator:
 
         """Initialize the emulator and frontend"""
 
-        save = tools.suppress_output()
+        # save = tools.suppress_output()
 
         # Load desmume
         self.emu = emulator.DeSmuME()  # type: ignore[attr-defined]
@@ -98,7 +98,7 @@ class Emulator:
                 ),
             )
 
-        tools.reset_output(save)
+        # tools.reset_output(save)
 
         # Do you want a frontend?
         if self.frontend:

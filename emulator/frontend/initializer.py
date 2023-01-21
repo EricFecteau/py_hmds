@@ -21,7 +21,7 @@ class GTKWindow:
 
         # Create Builder and import glade
         self.builder = Gtk.Builder()
-        self.builder.add_from_file(".\\emulator\\frontend\\PyDeSmuMe.glade")
+        self.builder.add_from_file("./emulator/frontend/PyDeSmuMe.glade")
 
         # Create Window
         self.main_window: Window = self.builder.get_object("wMainW")

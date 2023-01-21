@@ -53,7 +53,6 @@ except ImportError:
 
 from emulator.desmume.controls import add_key, rm_key
 
-
 SCREEN_WIDTH = 256
 SCREEN_HEIGHT = 192
 SCREEN_HEIGHT_BOTH = SCREEN_HEIGHT * 2

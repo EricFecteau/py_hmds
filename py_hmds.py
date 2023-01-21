@@ -16,7 +16,7 @@ def main() -> None:
     """Main function"""
 
     emu = emulator.Emulator(
-        nds="./roms/HMDS/NA/0561 - Harvest Moon DS (U)(Legacy).nds",
+            nds="./roms/HMDS/NA/0561 - Harvest Moon DS (U)(Legacy).nds",
         author="Eric Fecteau",
         movie="./movies/HMDS.dsm",
         save_path="./saves/",
@@ -24,14 +24,15 @@ def main() -> None:
     )
 
     emu.initialize_emulator(scale=2, rightscreen=False)
-    mem = memory.Memory(emu)
 
-    hmds_mem = ml.MemoryAddresses("NA1.0")
+    # mem = memory.Memory(emu)
 
-    # mf.intro(emu)
+    # hmds_mem = ml.MemoryAddresses("NA1.0")
+
+    mf.intro(emu)
     # emu.save("intro.ds0")
 
-    emu.load("intro.ds0")
+    # emu.load("intro.ds0")
 
     # data_list: list[int] = []
 
