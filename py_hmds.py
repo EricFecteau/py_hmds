@@ -25,12 +25,12 @@ def main() -> None:
 
     emu.initialize_emulator(scale=2, rightscreen=False)
 
-    # mem = memory.Memory(emu)
+    mem = memory.Memory(emu)
 
-    # hmds_mem = ml.MemoryAddresses("NA1.0")
+    hmds_mem = ml.MemoryAddresses("NA1.0")
 
     mf.intro(emu)
-    # emu.save("intro.ds0")
+    emu.save("intro.ds0")
 
     # emu.load("intro.ds0")
 
