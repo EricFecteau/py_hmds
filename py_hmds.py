@@ -20,33 +20,33 @@ def main() -> None:
         author="Eric Fecteau",
         movie="./movies/HMDS.dsm",
         save_path="./saves/",
-        frontend=False,
+        frontend=True,
     )
 
     emu.initialize_emulator(scale=2, rightscreen=False)
     mem = memory.Memory(emu)
 
-    hmds_mem = ml.MemoryAddresses("ABCEN0J12")
+    hmds_mem = ml.MemoryAddresses("NA1.0")
 
     # mf.intro(emu)
     # emu.save("intro.ds0")
 
     emu.load("intro.ds0")
 
-    data_list: list[int] = []
+    # data_list: list[int] = []
 
-    emu.add("", 10)
-    emu.add(
-        "",
-        1000,
-        run_function=print_random,
-        function_args={"mem": mem, "hmds_mem": hmds_mem, "data_list": data_list},
-    )
-    emu.add("", 10)
+    # emu.add("", 10)
+    # emu.add(
+    #     "",
+    #     1000,
+    #     run_function=print_random,
+    #     function_args={"mem": mem, "hmds_mem": hmds_mem, "data_list": data_list},
+    # )
+    # emu.add("", 10)
 
     emu.run()
 
-    print(data_list)
+    # print(data_list)
 
 
 if __name__ == "__main__":

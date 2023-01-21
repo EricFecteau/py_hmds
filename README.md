@@ -27,6 +27,6 @@ The repo also includes a technical guide that explores the technical aspects of 
 
 Various assets from the game has been collected and compiled. 
 
-### &ensp; 1. [Animals](./documentation/assets/)
-### &ensp; 2. [Faces](./documentation/faces/)
-### &ensp; 3. [Maps](./documentation/map/)
+### &ensp; 1. [Animals](./documentation/assets/animals)
+### &ensp; 2. [Faces](./documentation/assets/faces/)
+### &ensp; 3. [Maps](./documentation/assets/map/)
